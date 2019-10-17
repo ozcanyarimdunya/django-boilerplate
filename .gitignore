@@ -71,4 +71,6 @@ dmypy.json
 #.env
 
 .idea/
-assets/*
+liaoey/assets/local/
+liaoey/assets/static/
+liaoey/media/
