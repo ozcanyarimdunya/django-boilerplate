@@ -1,0 +1,30 @@
+version: '3'
+
+volumes:
+  postgres_data: {}
+  media_files: {}
+
+services:
+
+  database:
+    image: postgres:alpine
+    restart: unless-stopped
+    volumes:
+      - 'postgres_data:/var/lib/postgresql/data'
+    environment:
+      - 'POSTGRES_PASSWORD=123'
+
+  webapp:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    restart: unless-stopped
+    depends_on:
+      - database
+    command: sh /app/docker/start.sh
+    env_file:
+      - docker/.env
+    volumes:
+      - 'media_files:/app/liaoey/media/'
+    ports:
+      - 8000:8000
