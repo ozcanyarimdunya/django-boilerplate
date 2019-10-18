@@ -4,22 +4,22 @@ A boilerplate django project
 
 ## Installation[Linux]
 
-Install the virtualenv package
+1. Install the virtualenv package
 ```
 pip install virtualenv
 ```
 
-Create the virtual environment
+2. Create the virtual environment
 ```
 virtualenv venv
 ```    
 
-Activate the virtual environment
+3. Activate the virtual environment
 ```
 source venv/bin/activate
 ```
 
-Install all dependencies and start application
+4. Install all dependencies and start application
 ```
 make
 ```
