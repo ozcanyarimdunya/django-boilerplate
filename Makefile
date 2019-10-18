@@ -1,6 +1,6 @@
 .PHONY: all
 
-all: install migrations cache static test coverage run
+all: install migrations cache superuser static test coverage run
 
 coverage:
 	coverage run --source='.' manage.py test liaoey.apps
@@ -26,10 +26,13 @@ migrations:
 	python manage.py migrate
 
 run:
-	python manage.py runserver 0.0.0.0:8000
+	python manage.py runserver 127.0.0.1:8000
 
 static:
 	python manage.py collectstatic --noinput
+
+superuser:
+	python manage.py superuser -u admin -p 123 -e admin@mail.com
 
 test:
 	python manage.py test liaoey.apps
