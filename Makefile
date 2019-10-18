@@ -3,7 +3,7 @@
 all: install migrations cache superuser static test coverage run
 
 coverage:
-	coverage run --source='.' manage.py test liaoey.apps
+	coverage run --source='.' manage.py test source.apps
 	coverage report -m
 
 cache:
@@ -35,4 +35,4 @@ superuser:
 	python manage.py superuser -u admin -p 123 -e admin@mail.com
 
 test:
-	python manage.py test liaoey.apps
+	python manage.py test source.apps

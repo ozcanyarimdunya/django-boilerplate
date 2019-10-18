@@ -6,6 +6,10 @@ volumes:
 
 services:
 
+  redis:
+    image: redis
+    restart: unless-stopped
+
   database:
     image: postgres:alpine
     restart: unless-stopped
@@ -21,10 +25,11 @@ services:
     restart: unless-stopped
     depends_on:
       - database
+      - redis
     command: sh /app/docker/start.sh
     env_file:
       - docker/.env
     volumes:
-      - 'media_files:/app/liaoey/media/'
+      - 'media_files:/app/source/media/'
     ports:
       - 8000:8000

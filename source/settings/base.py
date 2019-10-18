@@ -1,4 +1,5 @@
 import os
+from collections import OrderedDict
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -17,7 +18,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # custom application
-    'liaoey.apps.common.apps.CommonConfig',
+    'constance',
+    'source.apps.common.apps.CommonConfig',
 ]
 
 MIDDLEWARE = [
@@ -30,7 +32,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'liaoey.urls'
+ROOT_URLCONF = 'source.urls'
 
 TEMPLATES = [
     {
@@ -49,7 +51,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'liaoey.wsgi.application'
+WSGI_APPLICATION = 'source.wsgi.application'
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -84,4 +86,25 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-SITE_HEADER = "Liaoey"
+SITE_HEADER = "Project"
+
+# constance settings
+CONSTANCE_BACKEND = 'constance.backends.redisd.RedisBackend'
+CONSTANCE_ADDITIONAL_FIELDS = {
+    'yes_no_null_select': ['django.forms.fields.ChoiceField', {
+        'widget': 'django.forms.Select',
+        'choices': ((None, "-----"), ("yes", "Yes"), ("no", "No"))
+    }],
+    'image_field': ['django.forms.ImageField', {}],
+}
+CONSTANCE_CONFIG = OrderedDict([
+    ('SITE NAME', ('My Title', 'Website title')),
+    ('SITE DESCRIPTION', ('', 'Website description')),
+    ('USE LOGO', ('yes', 'Use a logo for website', 'yes_no_null_select')),
+    ('LOGO IMAGE', ('default.png', 'Website logo', 'image_field')),
+])
+
+CONSTANCE_CONFIG_FIELDSETS = {
+    'General Options': ('SITE NAME', 'SITE DESCRIPTION'),
+    'Site Options': ('USE LOGO', 'LOGO IMAGE'),
+}

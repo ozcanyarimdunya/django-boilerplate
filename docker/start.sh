@@ -9,4 +9,4 @@ echo "... Applying Django collect static"
 python manage.py collectstatic --noinput --clear
 
 echo "... Starting Django"
-exec gunicorn liaoey.wsgi -b 0.0.0.0:8000 --reload
+exec gunicorn source.wsgi -b 0.0.0.0:8000 --reload

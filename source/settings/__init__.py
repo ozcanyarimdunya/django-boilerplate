@@ -1,9 +1,9 @@
 import logging
 
-from liaoey.utils.folder import create_folders
+from source.utils.folder import create_folders
 from .base import *
 
-logger = logging.getLogger('liaoey')
+logger = logging.getLogger('source')
 logger.error("Current mode: %s" % os.getenv('MODE', 'DEVELOPMENT'))
 
 if os.getenv('MODE') == 'PRODUCTION':

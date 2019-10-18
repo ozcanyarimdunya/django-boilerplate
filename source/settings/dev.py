@@ -10,3 +10,9 @@ DATABASES = {
         'PORT': 5432,
     }
 }
+
+CONSTANCE_REDIS_CONNECTION = {
+    'host': 'localhost',
+    'port': 6379,
+    'db': 0,
+}

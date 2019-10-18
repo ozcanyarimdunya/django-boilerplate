@@ -1,7 +1,7 @@
 import os
 import logging
 
-logger = logging.getLogger('liaoey')
+logger = logging.getLogger('source')
 
 
 def create_folder(path, exist_ok=True):

@@ -28,9 +28,15 @@ LOGGING = {
             'handlers': ['console'],
             'level': os.getenv('LOG_LEVEL', 'INFO'),
         },
-        'liaoey': {
+        'source': {
             'handlers': ['console'],
             'level': os.getenv('LOG_LEVEL', 'INFO'),
         },
     },
+}
+
+CONSTANCE_REDIS_CONNECTION = {
+    'host': os.getenv('REDIS_HOST'),
+    'port': os.getenv('REDIS_PORT'),
+    'db': os.getenv('REDIS_DB'),
 }
