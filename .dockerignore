@@ -71,4 +71,5 @@ dmypy.json
 #.env
 
 .idea/
-assets/
+source/assets/static/
+source/media/

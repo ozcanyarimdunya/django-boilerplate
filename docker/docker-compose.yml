@@ -20,15 +20,16 @@ services:
 
   webapp:
     build:
-      context: .
+      context: ..
       dockerfile: docker/Dockerfile
     restart: unless-stopped
     depends_on:
-      - database
       - redis
-    command: sh /app/docker/start.sh
+      - database
+    command: /bin/sh /app/docker/start.sh
+    entrypoint: /app/docker/entrypoint.sh
     env_file:
-      - docker/.env
+      - .env
     volumes:
       - 'media_files:/app/source/media/'
     ports:

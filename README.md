@@ -1,30 +1,40 @@
 # Project
 
-A boilerplate django project
+A boilerplate django project.
 
-## Installation[Linux]
 
-1. Install the virtualenv package
+## Local setup
+
+1. Install the virtualenv package.
    ```
    pip install virtualenv
    ```
 
-2. Create the virtual environment
+2. Create the virtual environment.
    ```
    virtualenv venv
    ```    
 
-3. Activate the virtual environment
+3. Activate the virtual environment.
    ```
    source venv/bin/activate
    ```
 
-4. Install all dependencies and start application
+4. Install all dependencies and start application.
    ```
    make
    ```
 
-5. Documentations
+## Docker installation
+
+1. Make sure you have installed **docker**.
+   ```
+   make docd
+   ```
+
+## Documentations
+
+1. Add document files under **docs/** folder and build them as html.
    ```
    pip install sphinx
    ```

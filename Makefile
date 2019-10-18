@@ -12,11 +12,14 @@ cache:
 coverage-html:
 	coverage html
 
+docb:
+	cd docker && docker-compose up --build
+
 docd:
-	docker-compose up -d --build
+	cd docker && docker-compose up -d --build
 
 docdown:
-	docker-compose down -v
+	cd docker && docker-compose down -v
 
 documentation:
 	cd docs && make html
