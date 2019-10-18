@@ -18,6 +18,9 @@ docd:
 docdown:
 	docker-compose down -v
 
+documentation:
+	cd docs && make html
+
 install:
 	pip install -r requirements.txt
 
