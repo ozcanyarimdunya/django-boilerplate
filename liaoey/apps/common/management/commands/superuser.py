@@ -22,7 +22,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         username = options.get('username')
         password = options.get('password')
-        email = options.get('email', [])
+        email = options.get('email')
 
         for u, p, e in zip(username, password, email):
             try:
