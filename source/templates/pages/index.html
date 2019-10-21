@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="row">
+    {% for i in '01234'|make_list %}
+      <div class="col-4">
+      {% with i as number %}
+        {% include '_components/dashboard.html' %}
+      {% endwith %}
+      </div>
+    {% endfor %}
+  </div>
+{% endblock content %}

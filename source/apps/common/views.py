@@ -1,5 +1,6 @@
 from django.views.generic import TemplateView
 
-
-class IndexView(TemplateView):
-    template_name = 'index.html'
+index = TemplateView.as_view(template_name='pages/index.html')
+create = TemplateView.as_view(template_name='pages/create_task.html')
+_list = TemplateView.as_view(template_name='pages/list_task.html')
+result = TemplateView.as_view(template_name='pages/result.html')

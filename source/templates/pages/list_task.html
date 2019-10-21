@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h4 class="text-center">Task List</h4>
+  <hr>
+  <div class="row">
+    <div class="col-8 offset-2">
+      <table class="table">
+        <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Date</th>
+          <th scope="col">Status</th>
+          <th scope="col">Operation</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Task 1</td>
+          <td>20:11</td>
+          <td>Done</td>
+          <td>
+            <a href="/result/" class="btn btn-sm btn-success">Browse</a>
+            <button class="btn btn-sm btn-danger">Delete</button>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Task 2</td>
+          <td>20:11</td>
+          <td>Done</td>
+          <td>
+            <a href="/result/" class="btn btn-sm btn-success">Browse</a>
+            <button class="btn btn-sm btn-danger">Delete</button>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Task 3</td>
+          <td>20:11</td>
+          <td>Done</td>
+          <td>
+            <a href="/result/" class="btn btn-sm btn-success">Browse</a>
+            <button class="btn btn-sm btn-danger">Delete</button>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">4</th>
+          <td>Task 4</td>
+          <td>20:11</td>
+          <td>Done</td>
+          <td>
+            <a href="/result/" class="btn btn-sm btn-success">Browse</a>
+            <button class="btn btn-sm btn-danger">Delete</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+{% endblock content %}

@@ -1,0 +1,57 @@
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+    <h6 class="m-0 font-weight-bold text-primary">Dashboard - {{ number }}</h6>
+  </div>
+  <div class="card-body">
+    <div class="text-center">
+      <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
+           src="https://blackrockdigital.github.io/startbootstrap-sb-admin-2/img/undraw_posting_photo.svg" alt="">
+    </div>
+    <p>Add some quality, svg illustrations to your project courtesy of <a target="_blank" rel="nofollow"
+                                                                          href="https://undraw.co/">unDraw</a>, a
+      constantly updated collection of beautiful svg images that you can use completely free and without
+      attribution!
+    </p>
+    <a rel="nofollow" href="#" data-toggle="modal" data-target="#tasksModal">Browse Dashboard →</a>
+  </div>
+</div>
+
+<div class="modal fade" id="tasksModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Tasks</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div class="list-group list-group-flush">
+          {% include '_components/task_item.html' with text="Item 1" %}
+          {% include '_components/task_item.html' with text="Item 2" %}
+          {% include '_components/task_item.html' with text="Item 3" %}
+          <div class="row px-2 py-3">
+            <div class="col-6">
+              <div class="card">
+                <a href="/create/" class="card-text p-2 btn">
+                  Create New
+                </a>
+              </div>
+            </div>
+            <div class="col-6 right">
+              <div class="card">
+                <a href="/list/" class="card-text p-2 btn">
+                  Show All
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-sm btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

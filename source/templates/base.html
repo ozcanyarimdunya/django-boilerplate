@@ -1,4 +1,5 @@
 {% load static %}
+{% load helper_tags %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +11,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Blank</title>
+  <title>Wttx - Offline</title>
 
   <!-- Custom fonts for this template-->
   <link href="{% static 'css/font-awesome/all.min.css' %}" rel="stylesheet" type="text/css">
@@ -20,6 +21,10 @@
 
   <!-- Custom styles for this template-->
   <link href="{% static 'css/sb-admin-2.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/site.css' %}" rel="stylesheet">
+
+  {% block style %}
+  {% endblock style %}
 
 </head>
 
@@ -61,7 +66,7 @@
     <footer class="sticky-footer bg-white">
       <div class="container my-auto">
         <div class="copyright text-center my-auto">
-          <span>Copyright &copy; Your Website 2019</span>
+          <span>Copyright &copy; Huawei {% current_year %}</span>
         </div>
       </div>
     </footer>
@@ -90,6 +95,11 @@
 
 <!-- Custom scripts for all pages-->
 <script src="{% static 'js/sb-admin-2.min.js' %}"></script>
+
+<script src="{% static 'js/site.js' %}"></script>
+
+{% block script %}
+{% endblock script %}
 
 </body>
 
