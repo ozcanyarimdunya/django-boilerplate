@@ -89,7 +89,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 SITE_HEADER = "Project"
 
 # constance settings
-CONSTANCE_BACKEND = 'constance.backends.redisd.RedisBackend'
 CONSTANCE_ADDITIONAL_FIELDS = {
     'yes_no_null_select': ['django.forms.fields.ChoiceField', {
         'widget': 'django.forms.Select',

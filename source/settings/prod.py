@@ -35,6 +35,7 @@ LOGGING = {
     },
 }
 
+CONSTANCE_BACKEND = 'constance.backends.redisd.RedisBackend'
 CONSTANCE_REDIS_CONNECTION = {
     'host': os.getenv('REDIS_HOST'),
     'port': os.getenv('REDIS_PORT'),
