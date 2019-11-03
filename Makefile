@@ -1,6 +1,6 @@
 .PHONY: all
 
-all: install migrations cache superuser static test coverage run
+all: install migrations initial static test coverage run
 
 coverage:
 	coverage run --source='.' manage.py test source.apps
@@ -27,6 +27,9 @@ documentation:
 install:
 	pip install -r requirements.txt
 
+initial:
+	python manage.py loaddata source/initial.json
+
 migrations:
 	python manage.py makemigrations
 	python manage.py migrate
@@ -36,9 +39,6 @@ run:
 
 static:
 	python manage.py collectstatic --noinput
-
-superuser:
-	python manage.py superuser -u admin -p 123 -e admin@mail.com
 
 test:
 	python manage.py test source.apps

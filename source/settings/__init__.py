@@ -1,6 +1,6 @@
 import logging
 
-from source.utils.folder import create_folders
+from source.core.utils import FolderUtils
 from .base import *
 
 logger = logging.getLogger('source')
@@ -11,4 +11,4 @@ if os.getenv('MODE') == 'PRODUCTION':
 else:
     from .dev import *
 
-create_folders([STATIC_ROOT, MEDIA_ROOT] + [i for i in STATICFILES_DIRS])
+FolderUtils.create_folders([STATIC_ROOT, MEDIA_ROOT] + [i for i in STATICFILES_DIRS])
