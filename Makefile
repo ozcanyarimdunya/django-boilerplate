@@ -3,7 +3,7 @@
 all: install migrations initial static test coverage run
 
 coverage:
-	coverage run --source='.' manage.py test source.apps
+	coverage run --source='.' manage.py test source
 	coverage report -m
 
 cache:
@@ -28,7 +28,7 @@ install:
 	pip install -r requirements.txt
 
 initial:
-	python manage.py loaddata source/initial.json
+	python manage.py loaddata initial.json
 
 migrations:
 	python manage.py makemigrations
@@ -41,4 +41,4 @@ static:
 	python manage.py collectstatic --noinput
 
 test:
-	python manage.py test source.apps
+	python manage.py test source

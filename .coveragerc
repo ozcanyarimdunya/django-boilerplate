@@ -1,0 +1,11 @@
+[report]
+skip_covered = True
+show_missing = True
+omit =
+    manage.py
+    source/urls.py
+    source/wsgi.py
+    source/apps/*/migrations/*
+    source/apps/*/tests.py
+    source/apps/*/management/commands/*
+    source/settings/*
