@@ -2,8 +2,8 @@ coverage==4.5.4
 Django==2.2.6
 django-constance==2.4.0
 gunicorn==19.9.0
-Pillow==6.2.0
-psycopg2==2.8.3
+Pillow==6.2.1
+psycopg2==2.8.4
 pytz==2019.3
 redis==3.3.11
 sqlparse==0.3.0
