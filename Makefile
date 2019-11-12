@@ -1,13 +1,10 @@
 .PHONY: all
 
-all: install migrations initial static test coverage run
+all: install migrations static coverage run
 
 coverage:
 	coverage run --source='.' manage.py test source
 	coverage report -m
-
-cache:
-	python manage.py createcachetable
 
 coverage-html:
 	coverage html
@@ -21,14 +18,8 @@ docd:
 docdown:
 	cd docker && docker-compose down -v
 
-documentation:
-	cd docs && make html
-
 install:
 	pip install -r requirements.txt
-
-initial:
-	python manage.py loaddata initial.json
 
 migrations:
 	python manage.py makemigrations
@@ -39,6 +30,9 @@ run:
 
 static:
 	python manage.py collectstatic --noinput
+
+superuser:
+	python manage.py createsuperuser
 
 test:
 	python manage.py test source

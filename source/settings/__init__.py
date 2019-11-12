@@ -11,4 +11,6 @@ if os.getenv('MODE') == 'PRODUCTION':
 else:
     from .dev import *
 
-FolderUtils.create_folders([STATIC_ROOT, MEDIA_ROOT] + [i for i in STATICFILES_DIRS])
+FolderUtils.create_folder(STATIC_ROOT)
+FolderUtils.create_folder(MEDIA_ROOT)
+FolderUtils.create_folders(STATICFILES_DIRS)

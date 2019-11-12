@@ -1,8 +1,9 @@
 version: '3'
 
 volumes:
-  postgres_data: {}
-  media_files: {}
+  data_volume: {}
+  media_volume: {}
+  static_volume: {}
 
 services:
 
@@ -14,23 +15,35 @@ services:
     image: postgres:alpine
     restart: unless-stopped
     volumes:
-      - 'postgres_data:/var/lib/postgresql/data'
+      - 'data_volume:/var/lib/postgresql/data'
     environment:
       - 'POSTGRES_PASSWORD=123'
 
   webapp:
     build:
       context: ..
-      dockerfile: docker/Dockerfile
+      dockerfile: docker/webapp/Dockerfile
     restart: unless-stopped
-    depends_on:
-      - redis
-      - database
     command: /bin/sh /app/docker/start.sh
     entrypoint: /app/docker/entrypoint.sh
     env_file:
-      - .env
+      - webapp/.env
     volumes:
-      - 'media_files:/app/source/media/'
+      - 'static_volume:/app/source/assets/static/'
+      - 'media_volume:/app/source/media/'
+    depends_on:
+      - database
+    expose:
+      - 8000
+
+  nginx:
+    build:
+      context: ..
+      dockerfile: docker/nginx/Dockerfile
+    volumes:
+      - 'static_volume:/app/static-files/'
+      - 'media_volume:/app/media-files/'
+    depends_on:
+      - webapp
     ports:
-      - 8000:8000
+      - 8000:80

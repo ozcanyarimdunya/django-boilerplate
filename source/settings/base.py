@@ -17,8 +17,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # custom application
+    # third party application
     'constance',
+
+    # custom application
     'source.apps.common.apps.CommonConfig',
 ]
 
@@ -37,11 +39,11 @@ ROOT_URLCONF = 'source.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
-        ,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'constance.context_processors.config',  # constance
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -81,7 +83,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets', 'static')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'assets', 'local')
+    os.path.join(BASE_DIR, 'assets', 'static-dev', 'local')
 ]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -89,21 +91,28 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 SITE_HEADER = "Project"
 
 # constance settings
-CONSTANCE_ADDITIONAL_FIELDS = {
-    'yes_no_null_select': ['django.forms.fields.ChoiceField', {
-        'widget': 'django.forms.Select',
-        'choices': ((None, "-----"), ("yes", "Yes"), ("no", "No"))
-    }],
-    'image_field': ['django.forms.ImageField', {}],
-}
 CONSTANCE_CONFIG = OrderedDict([
-    ('SITE NAME', ('My Title', 'Website title')),
-    ('SITE DESCRIPTION', ('', 'Website description')),
-    ('USE LOGO', ('yes', 'Use a logo for website', 'yes_no_null_select')),
-    ('LOGO IMAGE', ('default.png', 'Website logo', 'image_field')),
+    ('SITE_TITLE', ('', 'Website title')),
+    ('SITE_NAME', ('', 'Website name')),
+    ('SITE_AUTHOR', ('', 'Website author')),
+    ('SITE_DESCRIPTION', ('', 'Website description')),
+    ('SITE_FOOTER_TEXT', ('', 'Website footer text')),
+    ('SITE_FACEBOOK_URL', ('', 'Website Facebook url')),
+    ('SITE_TWITTER_URL', ('', 'Website Twitter url')),
+    ('SITE_INSTAGRAM_URL', ('', 'Website Instagram url')),
 ])
 
-CONSTANCE_CONFIG_FIELDSETS = {
-    'General Options': ('SITE NAME', 'SITE DESCRIPTION'),
-    'Site Options': ('USE LOGO', 'LOGO IMAGE'),
-}
+CONSTANCE_CONFIG_FIELDSETS = OrderedDict([
+    ('Site Settings', (
+        'SITE_TITLE',
+        'SITE_NAME',
+        'SITE_FOOTER_TEXT',
+        'SITE_AUTHOR',
+        'SITE_DESCRIPTION',
+    )),
+    ('Social Links', (
+        'SITE_FACEBOOK_URL',
+        'SITE_TWITTER_URL',
+        'SITE_INSTAGRAM_URL',
+    )),
+])

@@ -14,10 +14,7 @@ class FolderUtils:
         :param exist_ok: ensure if given folder exist so no need to re-create again, default: True
         :return:
         """
-        try:
-            os.makedirs(path, exist_ok=exist_ok)
-        except Exception as ex:
-            logger.exception(ex)
+        os.makedirs(path, exist_ok=exist_ok)
 
     @classmethod
     def create_folders(cls, paths: (list, tuple), exist_ok=True):

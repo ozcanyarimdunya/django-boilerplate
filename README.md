@@ -2,42 +2,34 @@
 
 A boilerplate django project.
 
+## Installation
 
-## Local setup
-
-1. Install the virtualenv package.
+1. Clone the repository.
    ```
-   pip install virtualenv
-   ```
-
-2. Create the virtual environment.
-   ```
-   virtualenv venv
-   ```    
-
-3. Activate the virtual environment.
-   ```
-   source venv/bin/activate
+   $ git clone https://github.com/ozcanyarimdunya/blogger.git
+   $ cd blogger/
    ```
 
-4. Install all dependencies and start application.
+2. Install the virtualenv package, create new virtual environment and activate it.
    ```
-   make
-   ```
-
-## Docker installation
-
-1. Make sure you have installed **docker**.
-   ```
-   make docd
+   $ pip install virtualenv
+   $ virtualenv venv
+   $ source venv/bin/activate
    ```
 
-## Documentations
+3. Install all dependencies and start application on [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
+   ```
+   $ make
+   ```
 
-1. Add document files under **docs/** folder and build them as html.
+4. To access admin panel, create a superuser and visit [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/).
    ```
-   pip install sphinx
+   $ make superuser
    ```
+    
+## Running in docker
+
+1. Make sure you have installed **docker** and **docker-compose**.
    ```
-   make documentation
+   $ make docd
    ```

@@ -1,7 +1,8 @@
 from django.urls import path
 
-from .views import IndexView
+from .views import index_view
 
+app_name = 'common'
 urlpatterns = [
-    path('', IndexView.as_view()),
+    path('', index_view, name='common'),
 ]
