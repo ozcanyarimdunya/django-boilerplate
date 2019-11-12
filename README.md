@@ -1,5 +1,8 @@
 # Project
 
+[![Build Status](https://travis-ci.org/ozcanyarimdunya/django-boilerplate.svg?branch=master)](https://travis-ci.org/ozcanyarimdunya/django-boilerplate)
+[![Coverage Status](https://coveralls.io/repos/github/ozcanyarimdunya/django-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/ozcanyarimdunya/django-boilerplate?branch=master)
+
 A boilerplate django project.
 
 ## Installation
