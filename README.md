@@ -7,6 +7,12 @@
 
 > A boilerplate django project.
 
+| Project       | Django boilerplate                                     |
+| ------------- | ------------------------------------------------------ |
+| Author        | [Ozcan Yarimdunya](http://semiworld.org/)              |
+| Documentation | https://ozcanyarimdunya.github.io/django-boilerplate/  |
+| Github        | https://github.com/ozcanyarimdunya/django-boilerplate/ |
+
 ## Installation
 
 1. Clone the repository.

@@ -1,5 +1,11 @@
 This is a ready to use django boilerplate. 
 
+| Project       | Django boilerplate                                     |
+| ------------- | ------------------------------------------------------ |
+| Author        | [Ozcan Yarimdunya](http://semiworld.org/)              |
+| Documentation | https://ozcanyarimdunya.github.io/django-boilerplate/  |
+| Github        | https://github.com/ozcanyarimdunya/django-boilerplate/ |
+
 # Features
 
 - `docker` support
