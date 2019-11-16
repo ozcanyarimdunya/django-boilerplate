@@ -1,4 +1,4 @@
-# Django Boilerplate
+## Django Boilerplate
 
 [![Build Status](https://travis-ci.org/ozcanyarimdunya/django-boilerplate.svg?branch=master)](https://travis-ci.org/ozcanyarimdunya/django-boilerplate)
 [![Coverage Status](https://coveralls.io/repos/github/ozcanyarimdunya/django-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/ozcanyarimdunya/django-boilerplate?branch=master)
@@ -11,7 +11,7 @@
 | Documentation | [https://ozcanyarimdunya.github.io/django-boilerplate/](https://ozcanyarimdunya.github.io/django-boilerplate/)    |
 | Github        | [https://github.com/ozcanyarimdunya/django-boilerplate/](https://github.com/ozcanyarimdunya/django-boilerplate/)  |
 
-# Features
+## Features
 
 - `docker` support
 - Settings are separated as `production` and `development`
@@ -19,7 +19,7 @@
 - `django-constance` installed
 - A `common` app installed with a timestamped `BaseModel` model 
 
-# Installation
+## Installation
 
 1. Clone the repository.
         
@@ -42,7 +42,7 @@
         $ make superuser
 
     
-# Running in docker
+## Running in docker
 
 1. Make sure you have installed **docker** and **docker-compose**.
 
@@ -53,3 +53,8 @@
 
         $ docker exec -ti docker_webapp_1 make superuser
 
+## Documentation
+
+Documentations made by **mkdocs**. For more info visit [here](https://www.mkdocs.org/).
+
+        $ make documentation 

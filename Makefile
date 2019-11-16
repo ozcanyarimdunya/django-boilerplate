@@ -18,6 +18,10 @@ docd:
 docdown:
 	cd docker && docker-compose down -v
 
+documentation:
+	mkdocs build
+	mkdocs gh-deploy
+
 install:
 	pip install -r requirements.txt
 
