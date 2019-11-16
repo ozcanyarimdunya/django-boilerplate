@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/ozcanyarimdunya/django-boilerplate.svg?branch=master)](https://travis-ci.org/ozcanyarimdunya/django-boilerplate)
 [![Coverage Status](https://coveralls.io/repos/github/ozcanyarimdunya/django-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/ozcanyarimdunya/django-boilerplate?branch=master)
 
-> A ready to use boilerplate django boilerplate project.
+> A ready to use django boilerplate project.
 
 | Project       | Django boilerplate                                                                                                |
 | ------------- | ----------------------------------------------------------------------------------------------------------------- |
