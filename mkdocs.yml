@@ -1,0 +1,5 @@
+site_name: Django Boilerplate
+nav:
+  - Introduction: index.md
+  - User guide: about.md
+theme: readthedocs
