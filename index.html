@@ -53,6 +53,9 @@
     <a class="current" href=".">Introduction</a>
     <ul class="subnav">
             
+    <li class="toctree-l2"><a href="#django-boilerplate">Django Boilerplate</a></li>
+    
+
     <li class="toctree-l2"><a href="#features">Features</a></li>
     
 
@@ -102,7 +105,12 @@
           <div role="main">
             <div class="section">
               
-                <p>This is a ready to use django boilerplate. </p>
+                <h1 id="django-boilerplate">Django Boilerplate</h1>
+<p><a href="https://travis-ci.org/ozcanyarimdunya/django-boilerplate"><img alt="Build Status" src="https://travis-ci.org/ozcanyarimdunya/django-boilerplate.svg?branch=master" /></a>
+<a href="https://coveralls.io/github/ozcanyarimdunya/django-boilerplate?branch=master"><img alt="Coverage Status" src="https://coveralls.io/repos/github/ozcanyarimdunya/django-boilerplate/badge.svg?branch=master" /></a></p>
+<blockquote>
+<p>A ready to use boilerplate django boilerplate project.</p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -117,11 +125,11 @@
 </tr>
 <tr>
 <td>Documentation</td>
-<td>https://ozcanyarimdunya.github.io/django-boilerplate/</td>
+<td><a href="https://ozcanyarimdunya.github.io/django-boilerplate/">https://ozcanyarimdunya.github.io/django-boilerplate/</a></td>
 </tr>
 <tr>
 <td>Github</td>
-<td>https://github.com/ozcanyarimdunya/django-boilerplate/</td>
+<td><a href="https://github.com/ozcanyarimdunya/django-boilerplate/">https://github.com/ozcanyarimdunya/django-boilerplate/</a></td>
 </tr>
 </tbody>
 </table>
@@ -137,25 +145,25 @@
 <ol>
 <li>
 <p>Clone the repository.</p>
-<pre><code>git clone https://github.com/ozcanyarimdunya/django-boilerplate.git myapp
-cd myapp/
+<pre><code>$ git clone https://github.com/ozcanyarimdunya/django-boilerplate.git myapp
+$ cd myapp/
 </code></pre>
 </li>
 <li>
 <p>Install the virtualenv package, create new virtual environment and activate it.</p>
-<pre><code>pip install virtualenv
-virtualenv venv
-source venv/bin/activate
+<pre><code>$ pip install virtualenv
+$ virtualenv venv
+$ source venv/bin/activate
 </code></pre>
 </li>
 <li>
 <p>Install all dependencies and start application on <a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a>.</p>
-<pre><code>make
+<pre><code>$ make
 </code></pre>
 </li>
 <li>
 <p>To access admin panel, create a superuser and visit <a href="http://127.0.0.1:8000/admin/">http://127.0.0.1:8000/admin/</a>.</p>
-<pre><code>make superuser
+<pre><code>$ make superuser
 </code></pre>
 </li>
 </ol>
@@ -163,12 +171,12 @@ source venv/bin/activate
 <ol>
 <li>
 <p>Make sure you have installed <strong>docker</strong> and <strong>docker-compose</strong>.</p>
-<pre><code>make docd
+<pre><code>$ make docd
 </code></pre>
 </li>
 <li>
 <p>To access admin panel, create a superuser in docker and visit <a href="http://127.0.0.1:8000/admin/">http://127.0.0.1:8000/admin/</a>.</p>
-<pre><code>docker exec -ti docker_webapp_1 make superuser
+<pre><code>$ docker exec -ti docker_webapp_1 make superuser
 </code></pre>
 </li>
 </ol>
@@ -220,5 +228,5 @@ source venv/bin/activate
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-11-16 19:21:44
+Build Date UTC : 2019-11-16 19:27:13
 -->
