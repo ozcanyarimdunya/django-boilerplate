@@ -38,7 +38,7 @@ Project tree
     │   │   ├── static
     │   │   └── static-dev
     │   │       └── local
-    │   ├── core
+    │   ├── contrib
     │   │   ├── __init__.py
     │   │   ├── tests
     │   │   │   ├── __init__.py

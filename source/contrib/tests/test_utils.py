@@ -4,7 +4,7 @@ from pathlib import Path
 
 from django.test import TestCase
 
-from source.core.utils import FolderUtils
+from source.contrib.utils import create_folders
 
 
 class TestFolderUtils(TestCase):
@@ -18,26 +18,19 @@ class TestFolderUtils(TestCase):
         except Exception as ex:
             print(ex)
 
-    def test_create_folder(self):
+    def test_create_folders(self):
         new_dir = self.tmp_dir.joinpath('new')
-        FolderUtils.create_folder(new_dir)
+        create_folders(new_dir)
         self.assertTrue(
             self.tmp_dir.joinpath('new').is_dir()
         )
 
-    def test_create_folder_exception(self):
-        new_dir = self.tmp_dir.joinpath('c/d/e/f')
-        FolderUtils.create_folder(new_dir)
-        with self.assertRaises(FileExistsError):
-            FolderUtils.create_folder(new_dir, exist_ok=False)
-
-    def test_create_folders(self):
         new_dirs = [
             self.tmp_dir.joinpath('new1'),
             self.tmp_dir.joinpath('new2'),
             self.tmp_dir.joinpath('new3'),
         ]
-        FolderUtils.create_folders(new_dirs)
+        create_folders(*new_dirs)
         self.assertTrue(self.tmp_dir.joinpath('new1').is_dir())
         self.assertTrue(self.tmp_dir.joinpath('new2').is_dir())
         self.assertTrue(self.tmp_dir.joinpath('new2').is_dir())

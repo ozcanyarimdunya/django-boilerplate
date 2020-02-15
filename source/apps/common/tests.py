@@ -1,4 +1,4 @@
-from django.db import connection, migrations, models, transaction
+from django.db import connection
 from django.db.models.base import ModelBase
 from django.test import TestCase
 
