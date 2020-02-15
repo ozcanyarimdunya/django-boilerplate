@@ -1,5 +1,4 @@
 import os
-from collections import OrderedDict
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -18,7 +17,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # third party application
-    'constance',
 
     # custom application
     'source.apps.common.apps.CommonConfig',
@@ -43,7 +41,6 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
-                'constance.context_processors.config',  # constance
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -89,30 +86,3 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 SITE_HEADER = "Project"
-
-# constance settings
-CONSTANCE_CONFIG = OrderedDict([
-    ('SITE_TITLE', ('', 'Website title')),
-    ('SITE_NAME', ('', 'Website name')),
-    ('SITE_AUTHOR', ('', 'Website author')),
-    ('SITE_DESCRIPTION', ('', 'Website description')),
-    ('SITE_FOOTER_TEXT', ('', 'Website footer text')),
-    ('SITE_FACEBOOK_URL', ('', 'Website Facebook url')),
-    ('SITE_TWITTER_URL', ('', 'Website Twitter url')),
-    ('SITE_INSTAGRAM_URL', ('', 'Website Instagram url')),
-])
-
-CONSTANCE_CONFIG_FIELDSETS = OrderedDict([
-    ('Site Settings', (
-        'SITE_TITLE',
-        'SITE_NAME',
-        'SITE_FOOTER_TEXT',
-        'SITE_AUTHOR',
-        'SITE_DESCRIPTION',
-    )),
-    ('Social Links', (
-        'SITE_FACEBOOK_URL',
-        'SITE_TWITTER_URL',
-        'SITE_INSTAGRAM_URL',
-    )),
-])

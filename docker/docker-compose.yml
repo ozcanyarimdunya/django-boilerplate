@@ -7,10 +7,6 @@ volumes:
 
 services:
 
-  redis:
-    image: redis
-    restart: unless-stopped
-
   database:
     image: postgres:alpine
     restart: unless-stopped

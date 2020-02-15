@@ -16,7 +16,6 @@
 - `docker` support
 - Settings are separated as `production` and `development`
 - `static`, `media` files and `templates` set
-- `django-constance` installed
 - A `common` app installed with a timestamped `BaseModel` model 
 
 ## Installation
